@@ -15,19 +15,34 @@ const canvasHeight = 500;
 const letterA = {
   "size": 80,
   "offsetx": 0,
-  "offsety": 35
+  "offsety": 35,
+  "lerpColourAmt" : 1,
+  "lineHeight": 70,
+  "rotation": 45,
+  "rectwidth": 40,
+  "rectlength": 200
 }
 
 const letterB = {
   "size": 150,
   "offsetx": 0,
-  "offsety": -145
+  "offsety": -145,
+  "lerpColourAmt": 0,
+  "lineHeight": 220,
+  "rotation": 0,
+  "rectwidth": 50,
+  "rectlength": 50
 }
 
 const letterC = {
   "size": 100,
   "offsetx": 30,
-  "offsety": 0
+  "offsety": 0,
+  "lerpColourAmt": 0.5,
+  "lineHeight": 0,
+  "rotation": 0,
+  "rectwidth": 50,
+  "rectlength": 50
 }
 
 const backgroundColor  = "#acf2e7";
@@ -68,12 +83,31 @@ function drawLetter(posx, posy, letterData) {
   let size2 = letterData["size"];
   let pos2x = posx + letterData["offsetx"];
   let pos2y = posy + letterData["offsety"];
+  let colorVariability = letterData ["lerpColourAmt"]
+  let lineYChange = letterData ["lineHeight"]
+  let rotatedegree = letterData ["rotation"]
+  let myGreen = color("#72ab91");
+  let myPurple = color ("#b388c2");
+  let rectwidthchange = letterData ["rectwidth"]
+  let rectlengthchange = letterData ["rectlength"]
+
+  let fillSecondary = lerpColor (myGreen, myPurple, colorVariability);
+ 
+ 
+
 
   // draw two circles
   fill(darkGreen);
   ellipse(posx, posy, 150, 150);
-  fill(lightGreen);
+  angleMode(DEGREES)
+  
+  fill(fillSecondary);
   ellipse(pos2x, pos2y, size2, size2);
+  line (posx - 150/2, posy, posx - 150/2, posy -lineYChange);
+  push ();
+  rotate(rotatedegree);
+  rect (posx, posy - 200, rectwidthchange, rectlengthchange);
+  pop();
 }
 
 function keyTyped() {
