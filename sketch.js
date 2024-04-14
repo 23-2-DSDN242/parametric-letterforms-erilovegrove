@@ -36,7 +36,8 @@ const letterA = {
   "x2change":34,
   "y2change": 180,
   "x3change": 85,
-  "y3change": 110
+  "y3change": 110,
+  "rectanglefill": 0
 }
 
 const letterB = {
@@ -58,39 +59,41 @@ const letterB = {
   "rectoffsetx": 0-75,
   "rectoffsety": 0 - 90,
   "liney": 50,
-  "x1change": 300,
-  "y1change": 300,
+  "x1change": -100,
+  "y1change": -300,
   "x2change":-50,
-  "y2change": 200,
+  "y2change": 140,
   "x3change": 75,
-  "y3change": 200
+  "y3change": 200,
+  "rectanglefill": 0
 }
 
 const letterC = {
-  "size": 100,
-  "offsetx": 30,
-  "offsety": 0,
+  "size": 140,
+  "offsetx": 0,
+  "offsety": -80,
   "lerpColourAmt": 0.5,
   "lineHeight": 0,
   "rotation": 0,
-  "rectwidth": 50,
-  "rectlength": 250,
-  "translatex": canvasWidth / 2 + 250,
+  "rectwidth": 0,
+  "rectlength": 0,
+  "translatex": canvasWidth / 2 + 175,
   "translatey": canvasHeight / 1.6,
   "rotateline": 0,
-  "circle1x": canvasWidth / 2 + 250,
-  "circle1y": canvasHeight / 1.6,
-  "circle1size": 150,
-  "circle1colour": 0,
+  "circle1x": canvasWidth / 2 + 250 + 30,
+  "circle1y": canvasHeight / 1.6 - 80,
+  "circle1size": 90,
+  "circle1colour": "#acf2e7",
   "rectoffsetx": 0,
   "rectoffsety": 0 - 200,
-  "liney": 80,
-  "x1change": 300,
-  "y1change": 300,
-  "x2change":34,
-  "y2change": 180,
-  "x3change": 85,
-  "y3change": 110
+  "liney": 0,
+  "x1change": 0,
+  "y1change": 0,
+  "x2change":0,
+  "y2change": 0,
+  "x3change": 0,
+  "y3change": 0,
+  "rectanglefill": 0
 
   
 }
@@ -153,7 +156,8 @@ function drawLetter(posx, posy, letterData) {
   let y2 = posy- letterData ["y2change"];
   let x3 = posx - letterData ["x3change"];
   let y3 = posy - letterData ["y3change"];
-  let lineychange = letterData ["liney"]
+  let lineychange = letterData ["liney"];
+  let fillrectanglechange = letterData ["rectanglefill"]
 
   
   // Draw curve
@@ -174,15 +178,19 @@ function drawLetter(posx, posy, letterData) {
   pop()
 
   push ();
+  fill (fillrectanglechange);
   translate (translatexchange, translateychange);
   rotate(rotatedegree);
   rect (rectoffsetxchange, rectoffsetychange, rectwidthchange, rectlengthchange);
   pop();
 
+  push()
+  noStroke(); 
   fill(circle1colourchange);
   ellipse(circle1xchange, circle1ychange, circle1sizechange, circle1sizechange);
   fill(255, 0, 0); // Red
-  ellipse(x1, y1, 10, 10);
+  // ellipse(x1, y1, 10, 10);
+  pop()
  
 }
 
