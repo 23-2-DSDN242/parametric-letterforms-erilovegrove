@@ -21,15 +21,36 @@ function drawLetter(letterData) {
   strokeWeight(4);
 
   // determine parameters for second circle
-  let size2 = letterData["size"];
-  let pos2x = 50  + letterData["offsetx"];
-  let pos2y = 150 + letterData["offsety"];
+  let diameterchange = letterData ["arcdiameter"];
+  let negativechange = letterData ["arcdirection"];
+  let line2ychange = letterData ["line2y"];
+  let line3y = letterData ["line3length"];
+  let arc1x = letterData ["arc1xposition"];
+  let arc2x = letterData ["arc2xposition"];
+  let arc2y = letterData ["arc2yposition"];
+  let line2xchange = letterData ["line2xlength"];
+  let line2x = letterData ["line2xposition"];
+  let line2y = letterData ["line2ylength"]
 
-  // draw two circles
-  fill(darkGreen);
-  ellipse(50, 150, 75, 75);
-  fill(lightGreen);
-  ellipse(pos2x, pos2y, size2, size2);
+  
+  strokeWeight (10);
+  line (30, 80, 85, 80);
+  line (line2x, line2ychange, line2xchange, line2y);
+  line (30, 120, 85, 120);
+
+  line (30, 80, 30, line3y);
+ 
+
+  noFill();
+ 
+  arc(arc1x, 90, 20, 20, -PI / 2, PI / 2, OPEN)
+  // arc(arc1x, 110, 20, 20, -PI / 2, PI / 2, OPEN)
+  arc(arc2x, arc2y, diameterchange, diameterchange, negativechange * -PI / 2, negativechange * PI / 2, OPEN);
+
+  // arc(arc2x, arc2y, diameterchange, diameterchange, negativechange * PI / 2, negativechange * -PI / 2);
+  // arc(arc1x, 110, diameterchange, diameterchange, negativechange * PI / 2, negativechange * -PI / 2);
+
+  
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
