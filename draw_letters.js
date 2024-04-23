@@ -35,25 +35,26 @@ function drawLetter(letterData) {
   let line3x = letterData ["line3length"];
   let line1y = letterData ["line1ylength"];
   let line4ychange = letterData ["line4yposition"];
+  let smalldiameterchange = letterData ["smallarcdiameter"];
+  let line3ychange = letterData ["line3y"];
+  let line1xchange = letterData ["line1x"];
 
   
   strokeWeight (10);
-  line (30, line1y, 85, line1y);
+  line (line1xchange, line1y, 85, line1y);
   line (line2x, line2ychange, line2xchange, line2y);
-  line (30, 120, line3x, 120);
+  line (20, line3ychange, line3x, line3ychange);
 
-  line (30, line4ychange, 30, line4y);
+  line (20, line4ychange, 20, line4y);
  
 
   noFill();
  
   arc(arc1x, 90, diameterchange1, diameterchange1, -PI / 2, PI / 2, OPEN)
-  // arc(arc1x, 110, 20, 20, -PI / 2, PI / 2, OPEN)
   arc(arc2x, arc2y, diameterchange, diameterchange, negativechange * -PI / 2, negativechange * PI / 2, OPEN);
   
-  // arc(arc2x, arc2y, diameterchange, diameterchange, negativechange * PI / 2, negativechange * -PI / 2);
-  // arc(arc1x, 110, diameterchange, diameterchange, negativechange * PI / 2, negativechange * -PI / 2);
-
+  arc(85, 90, smalldiameterchange, smalldiameterchange, -HALF_PI, 0);
+  arc(30,90, smalldiameterchange, smalldiameterchange, -PI, -HALF_PI);
   
 }
 
