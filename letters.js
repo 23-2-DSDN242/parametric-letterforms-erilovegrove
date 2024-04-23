@@ -1,52 +1,68 @@
 const alphabet = {
   "default": {
+    "arcdiameter1": 20,
     "arcdiameter": 40,
     "arcdirection": -1,
     "line2y": 100,
-    "line3length": 120,
+    "line4length": 120,
     "arc1xposition": 85,
     "arc2xposition": 25,
     "arc2yposition": 100,
     "line2xlength": 85,
     "line2xposition": 30,
-    "line2ylength": 100
+    "line2ylength": 100,
+    "line3length": 85,
+    "line1ylength": 80,
+    "line4yposition": 80
+
   },
   "A": {
+    "arcdiameter1": 0,
     "arcdiameter": 40,
     "arcdirection": -1,
-    "line3length": 120,
-    "arc1xposition": 85,
+    "line4length": 120,
+    "arc1xposition": 60,
     "arc2xposition": 25,
     "arc2yposition": 100,
     "line2xlength": 85,
     "line2xposition": 85,
-    "line2y": 80,
-    "line2ylength": 120
-    
+    "line2y": 100,
+    "line2ylength": 120,
+    "line3length": 25,
+    "line1ylength": 80,
+    "line4yposition": 100
   },
   "B": {
+    "arcdiameter1": 20,
     "arcdiameter": 20,
     "arcdirection": 1,
     "line2y": 100,
-    "line3length": 120,
+    "line4length": 120,
     "arc1xposition": 85,
     "arc2xposition": 85,
     "arc2yposition": 110,
     "line2xlength": 85,
     "line2xposition": 30,
-    "line2ylength": 100
+    "line2ylength": 100,
+    "line3length": 85,
+    "line1ylength": 80,
+    "line4yposition": 80
   },
   "C": {
+    "arcdiameter1": 20,
     "arcdiameter": 40,
     "arcdirection": -1,
     "line2y": 80,
-    "line3length": 85,
+    "line4length": 85,
     "arc1xposition": 20,
     "arc2xposition": 25,
     "arc2yposition": 100,
     "line2xlength": 85,
     "line2xposition": 30,
-    "line2ylength": 80
+    "line2ylength": 80,
+    "line3length": 85,
+    "line1ylength": 80,
+    "line4yposition": 80
   },
   "D": {
     "size": 50,
