@@ -60,11 +60,9 @@ I decided to change one of the lines to be more versatile so I could have 2 line
 ![Image 4](image4.png)
 My interpolation was also not looking great at the start. Small edits I made was shrinking the two curves down to 0 at 50% during the interpolation so that you wouldn't be able to see the jarring point at which they flip direction. I also made the vertical line shrink in the middle at 50% to add some flair. 
 
-![Image 5](image5.png)
+![Image 5](image5.jpg)
 Lastly I added 3 little stars to the exhibition mode as I saw that stars were common in Y2k fonts. 
 
 
 
-
-<!-- <img src="assets/sketchno2.jpg" alt="sketch2" width="500"/> -->
 
