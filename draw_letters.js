@@ -1,12 +1,14 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#acf2e7";
-var systemLineColor = "#000090";
+var systemBackgroundColor = "#0c0c1c";
+var systemLineColor = 0;
 var systemBoxColor = "#C73869";
 
 /* internal constants */
 const darkGreen  = "#26b29d";
 const lightGreen  = "#30dfc4";
-const strokeColor  = "#0a2d27";
+const strokeColor =  "#b9faf7"
+
+
 
 /*
  * Draw the letter given the letterData
@@ -19,6 +21,14 @@ function drawLetter(letterData) {
   // color/stroke setup
   stroke(strokeColor);
   strokeWeight(4);
+
+
+  
+    drawingContext.shadowColor = color("#99e0dd");
+    drawingContext.shadowBlur = 32;
+
+  
+  
 
   // determine parameters for second circle
   let diameterchange = letterData ["arcdiameter"];
@@ -35,12 +45,12 @@ function drawLetter(letterData) {
   let line3x = letterData ["line3length"];
   let line1y = letterData ["line1ylength"];
   let line4ychange = letterData ["line4yposition"];
-  let smalldiameterchange = letterData ["smallarcdiameter"];
   let line3ychange = letterData ["line3y"];
   let line1xchange = letterData ["line1x"];
   let translatechange = letterData ["translate"];
   let line1x2change = letterData ["line1x2"];
-  let line3ychange2 = letterData ["line3y2"]
+  let line3ychange2 = letterData ["line3y2"];
+  let line4xchange = letterData ["line4x"];
 
   
 translate (translatechange, 0);
@@ -50,7 +60,7 @@ translate (translatechange, 0);
   line (line2x, line2ychange, line2xchange, line2y);
   line (line1xchange, line3ychange, line3x, line3ychange2);
 
-  line (20, line4ychange, 20, line4y);
+  line (line4xchange, line4ychange, line4xchange, line4y);
  
 
   noFill();
@@ -58,22 +68,49 @@ translate (translatechange, 0);
   arc(arc1x, 110, diameterchange1, diameterchange1, -PI / 2, PI / 2, OPEN)
   arc(arc2x, arc2y, diameterchange, diameterchange, negativechange * -PI / 2, negativechange * PI / 2, OPEN);
   
-  arc(85, 90, smalldiameterchange, smalldiameterchange, -HALF_PI, 0);
-  arc(30,90, smalldiameterchange, smalldiameterchange, -PI, -HALF_PI);
-  
+
+
+
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
   if(percent < 50){
-    new_letter["arcdiameter"] = map(percent, 0, 50, oldObj["arcdiameter"], 100);
+    new_letter["arcdiameter"] = map(percent, 0, 50, oldObj["arcdiameter"], 0);
 
   }else {
-    new_letter ["size"] = map(percent, 50, 100, 100, newObj ["arcdiameter"]);
+    new_letter ["arcdiameter"] = map(percent, 50, 100, 0, newObj ["arcdiameter"]);
   }
 
-  new_letter["arcdiameter1"]    = map(percent, 0, 100, oldObj["arcdiameter1"], newObj["arcdiameter1"]);
-  new_letter["arcdiameter"] = map(percent, 0, 100, oldObj["arcdiameter"], newObj["arcdiameter"]);
+  if(percent < 50){
+    new_letter["arcdiameter1"] = map(percent, 0, 50, oldObj["arcdiameter1"], 0);
+
+  }else {
+    new_letter ["arcdiameter1"] = map(percent, 50, 100, 0, newObj ["arcdiameter1"]);
+  } 
+
+  if(percent < 50){
+    new_letter["line4length"] = map(percent, 0, 50, oldObj["line4length"], 100);
+
+  }else {
+    new_letter ["line4length"] = map(percent, 50, 100, 100, newObj ["line4length"]);
+  } 
+
+  if(percent < 50){
+    new_letter["line4yposition"] = map(percent, 0, 50, oldObj["line4yposition"], 100);
+
+  }else {
+    new_letter ["line4yposition"] = map(percent, 50, 100, 100, newObj ["line4yposition"]);
+  } 
+
+  if(percent < 50){
+    new_letter["line4yposition"] = map(percent, 0, 50, oldObj["line4yposition"], 100);
+
+  }else {
+    new_letter ["line4yposition"] = map(percent, 50, 100, 100, newObj ["line4yposition"]);
+  } 
+
+
   new_letter["arcdirection"] = map(percent, 0, 100, oldObj["arcdirection"], newObj["arcdirection"]);
   new_letter["arc1xposition"] = map(percent, 0, 100, oldObj["arc1xposition"], newObj["arc1xposition"]);
   new_letter["arc2xposition"] = map(percent, 0, 100, oldObj["arc2xposition"], newObj["arc2xposition"]);
@@ -87,16 +124,15 @@ function interpolate_letter(percent, oldObj, newObj) {
   new_letter["line3length"] = map(percent, 0, 100, oldObj["line3length"], newObj["line3length"]);
   new_letter["line3y"] = map(percent, 0, 100, oldObj["line3y"], newObj["line3y"]);
   new_letter["line3y2"] = map(percent, 0, 100, oldObj["line3y2"], newObj["line3y2"]);
-  new_letter["line4length"] = map(percent, 0, 100, oldObj["line4length"], newObj["line4length"]);
-  new_letter["line4yposition"] = map(percent, 0, 100, oldObj["line4yposition"], newObj["line4yposition"]);
-  new_letter["smallarcdiameter"] = map(percent, 0, 100, oldObj["smallarcdiameter"], newObj["smallarcdiameter"]);
   new_letter["translate"] = map(percent, 0, 100, oldObj["translate"], newObj["translate"]);
   new_letter["line1x2"] = map(percent, 0, 100, oldObj["line1x2"], newObj["line1x2"]);
+  new_letter["line4x"] = map(percent, 0, 100, oldObj["line4x"], newObj["line4x"]);
   return new_letter;
 }
 
 var swapWords = [
-  "ABBAABBA",
-  "CAB?CAB?",
-  "BAAAAAAA"
+  "YEAR3000",
+  "SPACEAGE",
+  "GALACTIA",
+  "HOLOGRAM"
 ]
