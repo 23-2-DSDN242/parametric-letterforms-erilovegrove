@@ -195,6 +195,10 @@ function computeCurrentChosenChar(n) {
 }
 
 function draw () {
+
+
+  fill (255);
+  rect (0, 0, 1000, 1000);
   now = millis();
   // check to see if we should go into swapping mode
   if(!isSwappingWords && lastKeyPressedTime + 1000 * secondsUntilSwapMode < now) {
@@ -212,7 +216,44 @@ function draw () {
     }
   }
 
+
   background(systemBackgroundColor);
+  fill ("#99e0dd");
+  noStroke ();
+  drawingContext.shadowColor = color("#99e0dd");
+  drawingContext.shadowBlur = 32;
+  push()
+  translate (233, 160);
+  drawStar();
+  pop()
+  push()
+  translate (460, 275);
+  drawStar();
+  pop()
+  push()
+  translate (688, 160);
+  drawStar();
+  pop()
+ 
+
+  function drawStar() {
+   
+    beginShape();
+    vertex(10, 2);
+    vertex(12, 8);
+    vertex(18, 8);
+    vertex(13, 11);
+    vertex(15, 17);
+    vertex(10, 13);
+    vertex(5, 17);
+    vertex(7, 11);
+    vertex(2, 8);
+    vertex(8, 8);
+    endShape(CLOSE);
+  }
+
+  
+ 
 
   // shorthand variables to allow margin
   var o = 20
