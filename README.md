@@ -1,7 +1,9 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/xQz3oEP8)
+# YEAR3000 by Eri Lovegrove
 ## MDDN 242 2024 Assignment 2
-# YEAR3000
-## Eri Lovegrove
+
+### Description
+YEAR3000 is a font inspired by Y2K futuristic sci-fi styles. It's squat and curved, reminiscent of fonts from the 2000s. However, it also carries a spacey vibe with a glowing effect and blue-on-black color scheme. Imagine it as the kind of font that could have been created during the 2000s for a space-themed design.
 
 
 Each of my letters is made of:
@@ -14,7 +16,6 @@ The parameters that control the curves are:
   * `arc1xposition` : x position of arc 1
   * `arc2xposition` : x position of arc 2
   * `arc2yposition` : y position of arc 2
-
 
 - 1 vertical line. This line can move vertically and horizontally
 The parameters that control this line are:
@@ -42,8 +43,11 @@ The parameters that control the curves are:
 - Lastly there is one parameter that translates the whole letter:
   * `translate` 
 
+### Process
 
-Talk about process
+
+![Preview 1](preview1.jpg)
+<!-- <img src="assets/sketchno2.jpg" alt="sketch2" width="500"/> -->
 
 include screenshots
 
