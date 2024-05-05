@@ -47,11 +47,24 @@ The parameters that control the curves are:
 
 
 ![Preview 1](preview1.jpg)
+When first coming up with ideas I tried using line, circles, rectangels and curves. I found that I went over the maximum amount of parameters. 
+
+![Image 1](image1.png)
+I simplified my idea so that I would only be using strokes; simple lines or curves. This was my first iteration, where some letters a still a bit wonky.
+
+![Image 2](image2.jpg)
+I decided to change one of the lines to be more versatile so I could have 2 lines that could act as diagonals. I fixed up letters like K, M, W and U. I changed the colour scheme to convey more of the futuristic style I was going for. I also had to remove a parameter that controlled two small curves for letters like A and 2 image before this one as I thought it looked awful during interpolation. (example below)
+![Image 3](image3.png)
+(the two small curves/dots at the top of the letter)
+
+![Image 4](image4.png)
+My interpolation was also not looking great at the start. Small edits I made was shrinking the two curves down to 0 at 50% during the interpolation so that you wouldn't be able to see the jarring point at which they flip direction. I also made the vertical line shrink in the middle at 50% to add some flair. 
+
+![Image 5](image5.png)
+Lastly I added 3 little stars to the exhibition mode as I saw that stars were common in Y2k fonts. 
+
+
+
+
 <!-- <img src="assets/sketchno2.jpg" alt="sketch2" width="500"/> -->
 
-include screenshots
-
-talk bout what hoad to change, including the sharing of the ine1x of both lines because of constraints. How you needed to make one more line versatile to be a diagonal. 
-
-
-talk about 
